@@ -10,12 +10,13 @@
 <body>
 
   <script type="text/x-handlebars">
-    <h2>Welcome to Ember.js</h2>
+    <h2>Ember Calculator</h2>
 
     {{outlet}}
   </script>
 
   <script type="text/x-handlebars" data-template-name="index">
+   
       <div class="container">
           <div class="calcontainer container-fluid">
               <div class="row-fluid">
@@ -24,29 +25,24 @@
               <div class="row-fluid">
                   <div class="span8">
                       <ul class="row-fluid">
-                          <li class="btn span4" {{action "numberClicked" "1"}}>1</li>
-                          <li class="btn span4" {{action "numberClicked" "2"}}>2</li>
-                          <li class="btn span4" {{action "numberClicked" "3"}}>3</li>
+                            {{#each button in type1Array}}
+                          <li class="btn span4" {{action test button}}>{{button.value}}</li>
+                          {{/each}}
                       </ul>
                       <ul class="row-fluid">
-                          <li class="btn span4" {{action "numberClicked" "4"}}>4</li>
-                          <li class="btn span4" {{action "numberClicked" "5"}}>5</li>
-                          <li class="btn span4" {{action "numberClicked" "6"}}>6</li>
-                      </ul>
-                      <ul class="row-fluid">
-                          <li class="btn span4" {{action "numberClicked" "7"}}>7</li>
-                          <li class="btn span4" {{action "numberClicked" "8"}}>8</li>
-                          <li class="btn span4" {{action "numberClicked" "9"}}>9</li>
+                            {{#each button in type2Array}}
+                          <li class="btn span4" {{action test button}}>{{button.value}}</li>
+                          {{/each}}
                       </ul>
                   </div>
                   <div class="span4">
                       <ul class="row-fluid">
-                          <li class="btn span6" {{action "operatorClicked" "+"}}>+</li>
-                          <li class="btn span6" {{action "operatorClicked" "-"}}>-</li>
+                            {{#each button in type3Array}}
+                          <li class="btn span4" {{action test button}}>{{button.value}}</li>
+                          {{/each}}
                       </ul>
-                      <ul class="row-fluid">
-                          <li class="btn span6" {{action "operatorClicked" "/"}}>/</li>
-                          <li class="btn span6" {{action "operatorClicked" "*"}}>*</li>
+                       <ul class="row-fluid">
+                           <li class="btn span6" {{action "reset" }}>C</li>
                       </ul>
                   </div>
               </div>
